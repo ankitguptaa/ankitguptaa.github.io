@@ -3,7 +3,7 @@ const navbarOffsetTop = navbar.offsetTop;
 const sections = document.querySelectorAll("section");
 const navbarLinks = document.querySelectorAll(".navbar-link");
 const progress = document.querySelector(".progress-bars-wrapper");
-const progressBarPercents = [97, 89, 85, 87, 80, 70, 50];
+const progressBarPercents = [100, 100,100, 100, 100, 100, 100];
 
 window.addEventListener("scroll", () => {
   mainFn();
@@ -24,14 +24,6 @@ const mainFn = () => {
       navbarLinks[i].classList.add("change");
     }
   });
-
-  if (window.pageYOffset + window.innerHeight >= progress.offsetTop) {
-    document.querySelectorAll(".progress-percent").forEach((el, i) => {
-      el.style.width = `${progressBarPercents[i]}%`;
-      el.previousElementSibling.firstElementChild.textContent =
-        progressBarPercents[i];
-    });
-  }
 };
 
 mainFn();
